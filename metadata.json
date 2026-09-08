@@ -1,0 +1,6 @@
+{
+  "name": "4D Belief Clearing Platform",
+  "description": "Guided 4D Subconscious Reprogramming Method for clearing limiting beliefs by Deepanshu Bagde for Monkhood Club.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
