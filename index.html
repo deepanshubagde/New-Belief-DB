@@ -1,21 +1,1815 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>4D Belief Clearing | Monkhood Club</title>
-    <meta name="description" content="Clear your limiting beliefs using the 4D Belief Clearing Method™️ (Subconscious Reprogramming Method) by Deepanshu Bagde at Monkhood Club" />
-    <meta property="og:title" content="4D Belief Clearing | Monkhood Club" />
-    <meta property="og:description" content="Clear your limiting beliefs using the 4D Belief Clearing Method™️ (Subconscious Reprogramming Method) by Deepanshu Bagde at Monkhood Club" />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
-</html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>4D Belief Clearing Platform | Monkhood Club</title>
+  <meta name="description" content="Clear limiting beliefs using the 4D Subconscious Reprogramming Method by Deepanshu Bagde at Monkhood Club" />
+  <meta property="og:title" content="4D Belief Clearing Platform | Monkhood Club" />
+  <meta property="og:description" content="Clear limiting beliefs using the 4D Subconscious Reprogramming Method by Deepanshu Bagde at Monkhood Club" />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet" />
 
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['Cinzel', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+          },
+          colors: {
+            monk: {
+              bg: '#0C0E14',
+              surface: '#141822',
+              elevated: '#1B212F',
+              amber: '#E59A46',
+              amberLight: '#F5C78E',
+              amberGlow: 'rgba(229, 154, 70, 0.18)',
+              detect: '#E26D5C',
+              decode: '#E5A84B',
+              dissolve: '#9D71E8',
+              design: '#36B37E',
+            }
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    :root {
+      --bg: #0C0E14;
+      --surface: #141822;
+      --surface-elevated: #1B212F;
+      --border: rgba(255, 255, 255, 0.08);
+      --border-accent: rgba(229, 154, 70, 0.35);
+      --amber: #E59A46;
+      --amber-light: #F5C78E;
+      --detect: #E26D5C;
+      --decode: #E5A84B;
+      --dissolve: #9D71E8;
+      --design: #36B37E;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: #F3F4F6;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      min-height: 100vh;
+      background-image: 
+        radial-gradient(ellipse 65% 35% at 50% -5%, rgba(229, 154, 70, 0.12), transparent 70%),
+        radial-gradient(ellipse 50% 25% at 50% 100%, rgba(54, 179, 126, 0.06), transparent 80%);
+      background-attachment: fixed;
+    }
+
+    .font-cinzel {
+      font-family: 'Cinzel', Georgia, serif;
+    }
+
+    /* Custom Glass Card */
+    .zen-card {
+      background: rgba(20, 24, 34, 0.85);
+      backdrop-filter: blur(14px);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.6);
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .zen-card:hover {
+      border-color: rgba(229, 154, 70, 0.25);
+    }
+
+    .zen-input {
+      background: rgba(12, 14, 20, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      color: #F9FAFB;
+      transition: all 0.2s ease;
+    }
+
+    .zen-input:focus {
+      outline: none;
+      border-color: var(--amber);
+      box-shadow: 0 0 0 3px rgba(229, 154, 70, 0.18);
+    }
+
+    /* Primary Gold Button */
+    .btn-primary {
+      background: linear-gradient(135deg, #E59A46 0%, #C97D2A 100%);
+      color: #0C0E14;
+      font-weight: 700;
+      border-radius: 10px;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 18px rgba(229, 154, 70, 0.28);
+      cursor: pointer;
+    }
+
+    .btn-primary:hover:not(:disabled) {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 22px rgba(229, 154, 70, 0.4);
+      filter: brightness(1.06);
+    }
+
+    .btn-primary:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+      box-shadow: none;
+    }
+
+    .btn-ghost {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #D1D5DB;
+      border-radius: 10px;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .btn-ghost:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.2);
+      color: #FFFFFF;
+    }
+
+    /* Sacred Certificate Scroll */
+    .transformation-scroll {
+      background: linear-gradient(180deg, #181E2B 0%, #12151E 100%);
+      border: 1px solid rgba(229, 154, 70, 0.35);
+      border-radius: 16px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.65), 0 0 30px rgba(229, 154, 70, 0.08);
+      position: relative;
+    }
+
+    .scroll-section {
+      padding: 14px 18px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      text-align: left;
+    }
+
+    .scroll-section:last-child {
+      border-bottom: none;
+    }
+
+    .scroll-label {
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-family: monospace;
+      margin-bottom: 4px;
+    }
+
+    /* Print Styles for high-fidelity certificate output */
+    @media print {
+      body {
+        background: #FFFFFF !important;
+        color: #111827 !important;
+        background-image: none !important;
+      }
+      #app-header, #stepper-bar, #action-buttons, #download-hub, .no-print {
+        display: none !important;
+      }
+      .transformation-scroll {
+        border: 2px solid #333 !important;
+        background: #FFFFFF !important;
+        color: #111827 !important;
+        box-shadow: none !important;
+      }
+      .scroll-section {
+        border-bottom: 1px solid #E5E7EB !important;
+      }
+      .scroll-label {
+        color: #4B5563 !important;
+      }
+      .text-white, .text-gray-200, .text-gray-300 {
+        color: #111827 !important;
+      }
+    }
+  </style>
+</head>
+<body class="flex flex-col min-h-screen selection:bg-[rgba(229,154,70,0.3)] selection:text-white">
+
+  <!-- Application Shell -->
+  <div id="app" class="flex flex-col min-h-screen">
+    <!-- Header -->
+    <header id="app-header" class="sticky top-0 z-40 bg-[#0C0E14]/90 backdrop-blur-md border-b border-white/10 px-4 py-3">
+      <div class="max-w-4xl mx-auto flex items-center justify-between">
+        <div class="flex items-center gap-3 cursor-pointer" onclick="goToPhase('welcome')">
+          <div class="w-9 h-9 rounded-xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-[#E59A46]">
+            <i data-lucide="shield" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="font-cinzel text-sm sm:text-base font-bold tracking-wider text-white">MONKHOOD CLUB</span>
+              <span class="text-[10px] font-mono uppercase bg-amber-500/15 text-[#E59A46] px-2 py-0.5 rounded border border-amber-500/25">4D Protocol</span>
+            </div>
+            <p class="text-[11px] text-gray-400 font-medium">Subconscious Reprogramming Method · by Deepanshu Bagde</p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <button onclick="window.print()" class="btn-ghost px-3 py-1.5 text-xs flex items-center gap-1.5 hidden sm:flex" title="Print session certificate">
+            <i data-lucide="printer" class="w-3.5 h-3.5 text-gray-400"></i>
+            <span>Print</span>
+          </button>
+          <button onclick="resetApp()" class="btn-ghost px-3 py-1.5 text-xs flex items-center gap-1.5" title="Restart with a new goal">
+            <i data-lucide="rotate-ccw" class="w-3.5 h-3.5 text-[#E59A46]"></i>
+            <span class="hidden sm:inline">Reset</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Stepper Navigation Bar -->
+      <div id="stepper-bar" class="max-w-4xl mx-auto mt-2 pt-2 border-t border-white/5 flex items-center justify-between overflow-x-auto gap-1 text-[11px] font-medium text-gray-400 py-1">
+        <!-- Rendered dynamically -->
+      </div>
+    </header>
+
+    <!-- Main Dynamic Content Area -->
+    <main class="flex-1 w-full max-w-3xl mx-auto px-4 py-6 sm:py-8" id="main-view">
+      <!-- Views injected dynamically via render() -->
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-6 border-t border-white/5 text-center text-xs text-gray-500 font-mono no-print">
+      <div class="max-w-4xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
+        <span>© MONKHOOD CLUB · 4D Subconscious Reprogramming</span>
+        <span>Inner Mastery Method by Deepanshu Bagde</span>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Pure Inline Browser Vanilla JavaScript -->
+  <script>
+    /* ==========================================================================
+       CONSTANTS & CURATED QUESTION DATA
+       ========================================================================== */
+    const BRAND = {
+      name: "Monkhood Club",
+      author: "Deepanshu Bagde",
+      methodTitle: "4D Belief Clearing Method™",
+      methodSubtitle: "Subconscious Reprogramming & Inner Mastery Protocol",
+    };
+
+    const PROMPT_GROUPS = [
+      {
+        title: "Fear, Exposure & Judgment",
+        color: "text-[#E26D5C]",
+        prompts: [
+          "When I visualize fully achieving my primary goal, what secretly terrifies me is...",
+          "If I fail in front of peers or clients, deep down it means I am...",
+          "If I become extraordinarily successful, people around me will probably..."
+        ]
+      },
+      {
+        title: "Worthiness & Entitlement",
+        color: "text-[#E5A84B]",
+        prompts: [
+          "The brutal, honest reason I haven't already accomplished this is...",
+          "Deep in my chest, I worry I don't deserve this level of breakthrough because...",
+          "To be truly worthy and respected, I was taught I must always..."
+        ]
+      },
+      {
+        title: "Money, Power & Freedom",
+        color: "text-[#36B37E]",
+        prompts: [
+          "Wealthy, powerful, or ultra-visible people are usually secretly...",
+          "If I charge high prices or demand full respect, people might think...",
+          "Having effortless abundance without exhaustion feels dangerous because..."
+        ]
+      }
+    ];
+
+    const COMMON_ARCHETYPES = [
+      "I must constantly struggle and suffer for my success to be worthy.",
+      "I am terrified of being fully seen and judged by others.",
+      "If I succeed beyond my family or peers, I will be rejected and isolated.",
+      "I am not smart or qualified enough yet to claim this.",
+      "Money and high power corrupt genuine integrity.",
+      "If I relax and feel safe, everything I built will collapse."
+    ];
+
+    const LOGIC_QUESTIONS = [
+      "Is this limiting thought 100% universally, mathematically true in every scenario?",
+      "Can you identify at least one living human being who has achieved what you desire while disproving this exact belief?",
+      "Who would you instantly become, and how would your physical energy feel right now, if this thought never existed?",
+      "What has clinging to this subconscious belief cost you in money, emotional peace, and momentum over the past 3 years?"
+    ];
+
+    const DESIGN_RULES = [
+      { title: "Present Tense Sovereign Certainty", desc: "Crafted in the immediate 'I AM...' or 'It is natural for me...'—never in future wanting." },
+      { title: "Zero Negations", desc: "The subconscious brain cannot process negatives ('not scared' triggers 'scared'). Focus on the exact state." },
+      { title: "Sensory Realism (V.A.K)", desc: "Neurologically anchor with visual cinema, grounded vocal timbre, and chest-expanding somatic posture." },
+      { title: "Active Emotional Voltage", desc: "Affirmations without elevated emotional charge will be rejected as empty cognitive noise." },
+      { title: "21-Day Neural Rewiring", desc: "Requires consecutive repetitions upon waking and before sleep during optimal neuro-plastic theta brainwaves." }
+    ];
+
+    /* ==========================================================================
+       CENTRAL STATE STORE
+       ========================================================================== */
+    const state = {
+      phase: 'welcome', // 'welcome' | 'goal' | 'detect_prompts' | 'detect_select' | 'decode' | 'dissolve_logic' | 'dissolve_release' | 'design' | 'complete'
+      name: '',
+      goal: '',
+      answers: {},
+      selectedBelief: '',
+      customBelief: '',
+      decode: {
+        when: '',
+        whose: '',
+        v: '',
+        a: '',
+        kLocation: 'Solar Plexus / Center Chest'
+      },
+      intensityBefore: 8,
+      logicAnswers: {},
+      intensityAfter: 2,
+      newBelief: '',
+      designVAK: {
+        v: '',
+        a: '',
+        k: ''
+      },
+      // Timer state for somatic practice
+      timerRemaining: 120,
+      timerInterval: null,
+      timerRunning: false,
+      copiedFeedback: false
+    };
+
+    /* ==========================================================================
+       NAVIGATION & HELPERS
+       ========================================================================== */
+    function getActiveBelief() {
+      return state.selectedBelief || state.customBelief || 'I am not enough';
+    }
+
+    function goToPhase(phaseName) {
+      // Pause any running timer
+      if (state.timerInterval) {
+        clearInterval(state.timerInterval);
+        state.timerRunning = false;
+      }
+      state.phase = phaseName;
+      render();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function resetApp() {
+      if (confirm('Start a new subconscious clearing session? Your current progress will reset.')) {
+        if (state.timerInterval) clearInterval(state.timerInterval);
+        state.phase = 'welcome';
+        state.name = '';
+        state.goal = '';
+        state.answers = {};
+        state.selectedBelief = '';
+        state.customBelief = '';
+        state.decode = { when: '', whose: '', v: '', a: '', kLocation: 'Solar Plexus / Center Chest' };
+        state.intensityBefore = 8;
+        state.logicAnswers = {};
+        state.intensityAfter = 2;
+        state.newBelief = '';
+        state.designVAK = { v: '', a: '', k: '' };
+        render();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    function refreshIcons() {
+      if (window.lucide && typeof window.lucide.createIcons === 'function') {
+        window.lucide.createIcons();
+      }
+    }
+
+    /* ==========================================================================
+       DYNAMIC AFFIRMATION GENERATORS
+       ========================================================================== */
+    function generateAffirmationTemplates() {
+      const g = state.goal.trim() || 'my highest mission';
+      const cleanGoal = g.replace(/^(to|i want to|i will|achieve)\s+/i, '');
+      const old = getActiveBelief().toLowerCase();
+
+      return [
+        `I am completely worthy, calm, and sovereign as I master ${cleanGoal}.`,
+        `It is natural, safe, and inevitable for me to achieve ${cleanGoal} with effortless peace.`,
+        `I permanently release the illusion that "${old}" and stand tall in my authentic power.`,
+        `I hold unconditional permission to thrive, prosper, and fulfill ${cleanGoal} without struggle.`,
+        `I am grounded in unshakable truth; abundance, clarity, and leadership are my natural state.`
+      ];
+    }
+
+    /* ==========================================================================
+       DOWNLOAD / REPORT UTILITIES
+       ========================================================================== */
+    function buildMarkdownReport() {
+      const shift = Math.max(0, state.intensityBefore - state.intensityAfter);
+      const dateStr = new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+
+      return `═════════════════════════════════════════════════
+4D SUBCONSCIOUS REPROGRAMMING CERTIFICATE
+${BRAND.name.toUpperCase()} · ${BRAND.author.toUpperCase()}
+Protocol: ${BRAND.methodTitle}
+Date of Session: ${dateStr}
+═════════════════════════════════════════════════
+
+${state.name ? `PRACTITIONER: ${state.name}\n` : ''}PRIMARY TARGET GOAL:
+"${state.goal || 'Not specified'}"
+
+─────────────────────────────────────────────────
+DIMENSION 1 (DETECT): DISSOLVED LIMITING BELIEF
+~~"${getActiveBelief()}"~~
+
+─────────────────────────────────────────────────
+DIMENSION 2 (DECODE): ROOT IMPRINT & SENSORY STRUCTURE
+• First Memory: ${state.decode.when || 'Early childhood / adolescence'}
+• Authority Voice: ${state.decode.whose || 'External conditioning / early guardian'}
+• Somatic Center: ${state.decode.kLocation}
+• Internal Cinema: ${state.decode.v || 'Vivid hesitation'}
+• Tone: ${state.decode.a || 'Internal self-critic'}
+
+─────────────────────────────────────────────────
+DIMENSION 3 (DISSOLVE): INTENSITY NEUTRALIZATION
+• Initial Emotional Grip: ${state.intensityBefore} / 10
+• Post-Release Grip:     ${state.intensityAfter} / 10
+• Net Charge Shift:       -${shift} Points (${Math.round((shift / Math.max(1, state.intensityBefore)) * 100)}% neutralized)
+
+TECHNIQUES APPLIED:
+1. Somatic Extraction (Pattern Break): Physical tension pulled out from ${state.decode.kLocation} and vaporized on audible exhale.
+2. The Thumb Technique (Voice Deflation): Critical voice channelled down into left thumb tip and deflated into helium cartoon tone.
+
+─────────────────────────────────────────────────
+DIMENSION 4 (DESIGN): INSTALLED SOVEREIGN IDENTITY
+"${state.newBelief || 'I am sovereign, grounded, and unstoppable.'}"
+
+Sensory Installation Anchors:
+• Visual (V): ${state.designVAK.v || 'Vivid movie of relaxed mastery'}
+• Auditory (A): ${state.designVAK.a || 'Deep, calm tone of certainty'}
+• Somatic (K): ${state.designVAK.k || 'Chest open, shoulders back, peaceful diaphragmatic breath'}
+
+─────────────────────────────────────────────────
+THE 21-DAY MONKHOOD NEURO-PLASTICITY PROTOCOL:
+• Morning (Waking): Stand tall. Recite your sovereign truth aloud 10 times with diaphragmatic breath.
+• Midday (Reset): Repeat 5 times internally. Deflate any doubts with the Thumb Technique.
+• Evening (Sleep): Handwrite your affirmation 5 times in your journal while entering theta state.
+═════════════════════════════════════════════════
+Certified by ${BRAND.name} · ${BRAND.author}`;
+    }
+
+    function buildHtmlReport() {
+      const shift = Math.max(0, state.intensityBefore - state.intensityAfter);
+      const dateStr = new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+      const md = buildMarkdownReport();
+
+      return `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>4D Belief Clearing Certificate - ${escapeHtml(state.name || 'Practitioner')}</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0C0E14; color: #F3F4F6; padding: 40px 20px; line-height: 1.6; }
+    .card { max-width: 760px; margin: 0 auto; background: #141822; border: 1px solid rgba(229,154,70,0.3); border-radius: 14px; padding: 32px; }
+    .header { text-align: center; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 20px; margin-bottom: 24px; }
+    h1 { color: #E59A46; font-size: 24px; margin: 0 0 6px 0; }
+    .sub { color: #9CA3AF; font-size: 13px; }
+    .section { margin-bottom: 22px; padding: 14px; background: rgba(255,255,255,0.02); border-radius: 8px; border-left: 3px solid #E59A46; }
+    .label { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #E59A46; font-weight: 700; margin-bottom: 4px; }
+    .old-belief { text-decoration: line-through; color: #9CA3AF; font-style: italic; }
+    .new-belief { color: #36B37E; font-size: 18px; font-weight: 700; }
+    .metric { display: flex; gap: 20px; font-size: 20px; font-weight: bold; margin-top: 6px; }
+    .btn-print { display: block; width: 100%; text-align: center; padding: 12px; background: #E59A46; color: #0C0E14; font-weight: bold; border-radius: 8px; text-decoration: none; margin-top: 24px; cursor: pointer; border: none; }
+    @media print { body { background: #fff; color: #111; padding: 0; } .card { border: none; background: #fff; } .section { border-left-color: #333; background: #f9fafb; color: #111; } .btn-print { display: none; } }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="header">
+      <h1>${escapeHtml(BRAND.name.toUpperCase())}</h1>
+      <div class="sub">${escapeHtml(BRAND.methodTitle)} · Mastered by ${escapeHtml(BRAND.author)}</div>
+      <div style="font-size: 12px; color: #9CA3AF; margin-top: 4px;">Session Completed: ${escapeHtml(dateStr)}</div>
+    </div>
+
+    <div class="section">
+      <div class="label">Practitioner & Target Goal</div>
+      ${state.name ? `<div style="font-weight: 600; color: #F5C78E; margin-bottom: 2px;">Practitioner: ${escapeHtml(state.name)}</div>` : ''}
+      <div style="font-size: 16px; font-weight: 500;">"${escapeHtml(state.goal || 'Life Breakthrough')}"</div>
+    </div>
+
+    <div class="section" style="border-left-color: #E26D5C;">
+      <div class="label" style="color: #E26D5C;">D1 · Dissolved Subconscious Belief</div>
+      <div class="old-belief">"${escapeHtml(getActiveBelief())}"</div>
+    </div>
+
+    <div class="section" style="border-left-color: #E5A84B;">
+      <div class="label" style="color: #E5A84B;">D2 · Subconscious Imprint Origin</div>
+      <div><strong>Formative Memory:</strong> ${escapeHtml(state.decode.when || 'Childhood imprint')}</div>
+      <div><strong>Authority Voice:</strong> ${escapeHtml(state.decode.whose || 'External conditioning')}</div>
+      <div><strong>Somatic Anchor:</strong> ${escapeHtml(state.decode.kLocation)}</div>
+    </div>
+
+    <div class="section" style="border-left-color: #9D71E8;">
+      <div class="label" style="color: #9D71E8;">D3 · Charge Collapse & Techniques Applied</div>
+      <div class="metric">
+        <span style="color: #E26D5C;">Initial: ${state.intensityBefore}/10</span>
+        <span>➔</span>
+        <span style="color: #36B37E;">After: ${state.intensityAfter}/10</span>
+        <span style="font-size: 14px; background: rgba(54,179,126,0.15); color: #36B37E; padding: 4px 10px; border-radius: 6px;">-${shift} Reduction</span>
+      </div>
+      <p style="font-size: 12px; color: #9CA3AF; margin-top: 8px;">
+        Neutralized via Somatic Extraction Pattern Break and The Thumb Technique Voice Deflation.
+      </p>
+    </div>
+
+    <div class="section" style="border-left-color: #36B37E;">
+      <div class="label" style="color: #36B37E;">D4 · Sovereign Installed Affirmation</div>
+      <div class="new-belief">"${escapeHtml(state.newBelief || 'I am sovereign.')}"</div>
+    </div>
+
+    <div class="section">
+      <div class="label">The 21-Day Neuro-Plasticity Routine</div>
+      <div style="font-size: 13px; color: #D1D5DB;">
+        <p><strong>1. Morning:</strong> Stand tall. Recite 10 times aloud with deep breath.</p>
+        <p><strong>2. Midday:</strong> Pause for 60 seconds. Repeat 5 times. Deflate old echoes with Thumb Technique.</p>
+        <p><strong>3. Evening:</strong> Handwrite 5 times in journal before sleep.</p>
+      </div>
+    </div>
+
+    <button class="btn-print" onclick="window.print()">Print or Save as PDF</button>
+  </div>
+</body>
+</html>`;
+    }
+
+    function downloadFile(content, filename, mimeType) {
+      const blob = new Blob([content], { type: mimeType });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+
+    function triggerDownloadHtml() {
+      const html = buildHtmlReport();
+      const safeName = (state.name || 'Practitioner').replace(/[^a-zA-Z0-9_-]/g, '_');
+      downloadFile(html, `Monkhood_Club_4D_Report_${safeName}.html`, 'text/html');
+    }
+
+    function triggerDownloadTxt() {
+      const txt = buildMarkdownReport();
+      const safeName = (state.name || 'Practitioner').replace(/[^a-zA-Z0-9_-]/g, '_');
+      downloadFile(txt, `Monkhood_Club_4D_Report_${safeName}.txt`, 'text/plain');
+    }
+
+    function copyReportToClipboard() {
+      const txt = buildMarkdownReport();
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(txt).then(() => {
+          state.copiedFeedback = true;
+          render();
+          setTimeout(() => { state.copiedFeedback = false; render(); }, 2500);
+        });
+      } else {
+        const ta = document.createElement('textarea');
+        ta.value = txt;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        state.copiedFeedback = true;
+        render();
+        setTimeout(() => { state.copiedFeedback = false; render(); }, 2500);
+      }
+    }
+
+    function escapeHtml(str) {
+      if (!str) return '';
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+
+    /* ==========================================================================
+       MAIN VIEW RENDERER
+       ========================================================================== */
+    function render() {
+      renderStepper();
+      const main = document.getElementById('main-view');
+      if (!main) return;
+
+      switch (state.phase) {
+        case 'welcome':
+          main.innerHTML = renderWelcome();
+          break;
+        case 'goal':
+          main.innerHTML = renderGoal();
+          break;
+        case 'detect_prompts':
+          main.innerHTML = renderDetectPrompts();
+          break;
+        case 'detect_select':
+          main.innerHTML = renderDetectSelect();
+          break;
+        case 'decode':
+          main.innerHTML = renderDecode();
+          break;
+        case 'dissolve_logic':
+          main.innerHTML = renderDissolveLogic();
+          break;
+        case 'dissolve_release':
+          main.innerHTML = renderDissolveRelease();
+          break;
+        case 'design':
+          main.innerHTML = renderDesign();
+          break;
+        case 'complete':
+          main.innerHTML = renderComplete();
+          break;
+        default:
+          main.innerHTML = renderWelcome();
+      }
+
+      refreshIcons();
+    }
+
+    /* ==========================================================================
+       STEPPER BAR COMPONENT
+       ========================================================================== */
+    function renderStepper() {
+      const bar = document.getElementById('stepper-bar');
+      if (!bar) return;
+
+      const steps = [
+        { id: 'welcome', label: 'Orientation', phase: 'welcome' },
+        { id: 'goal', label: 'Anchor Goal', phase: 'goal' },
+        { id: 'detect_prompts', label: 'D1: Detect', phase: 'detect_prompts' },
+        { id: 'decode', label: 'D2: Decode', phase: 'decode' },
+        { id: 'dissolve_logic', label: 'D3: Dissolve', phase: 'dissolve_logic' },
+        { id: 'design', label: 'D4: Design', phase: 'design' },
+        { id: 'complete', label: 'Certificate', phase: 'complete' }
+      ];
+
+      const phaseOrder = ['welcome', 'goal', 'detect_prompts', 'detect_select', 'decode', 'dissolve_logic', 'dissolve_release', 'design', 'complete'];
+      const currentIndex = phaseOrder.indexOf(state.phase);
+
+      let html = '';
+      steps.forEach((s, idx) => {
+        const stepTargetIndex = phaseOrder.indexOf(s.phase);
+        const isActive = s.phase === state.phase || (s.phase === 'detect_prompts' && state.phase === 'detect_select') || (s.phase === 'dissolve_logic' && state.phase === 'dissolve_release');
+        const isPast = stepTargetIndex <= currentIndex;
+
+        const colorClass = isActive
+          ? 'text-[#E59A46] font-bold border-b-2 border-[#E59A46]'
+          : isPast
+          ? 'text-gray-300 hover:text-white cursor-pointer'
+          : 'text-gray-600 cursor-not-allowed';
+
+        html += `
+          <button 
+            type="button"
+            onclick="${isPast ? `goToPhase('${s.phase}')` : ''}"
+            class="px-2.5 py-1 whitespace-nowrap transition-colors flex items-center gap-1 ${colorClass}"
+          >
+            <span>${s.label}</span>
+          </button>
+        `;
+      });
+
+      bar.innerHTML = html;
+    }
+
+    /* ==========================================================================
+       VIEW: WELCOME
+       ========================================================================== */
+    function renderWelcome() {
+      return `
+        <div class="text-center py-4">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-[#E59A46] text-xs font-semibold uppercase tracking-wider mb-6">
+            <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+            <span>Subconscious Neuro-Plasticity Engine</span>
+          </div>
+
+          <h1 class="font-cinzel text-3xl sm:text-5xl font-bold text-white mb-4 tracking-tight leading-tight">
+            Rewrite the Hidden Code of Your Mind
+          </h1>
+
+          <p class="text-gray-300 text-sm sm:text-base max-w-xl mx-auto mb-8 leading-relaxed">
+            Welcome to the <strong class="text-white">${BRAND.name}</strong> proprietary <strong class="text-[#E59A46]">${BRAND.methodTitle}</strong>. In four deep neurological stages, we unmask the core subconscious belief holding your reality hostage, dissolve its emotional grip, and anchor a sovereign new identity.
+          </p>
+
+          <!-- The 4 Dimensions Overview Bento -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 text-left mb-8">
+            <div class="zen-card p-4 border-l-4 border-l-[#E26D5C]">
+              <div class="flex items-center gap-2 text-[#E26D5C] font-bold text-xs uppercase tracking-wider mb-1">
+                <i data-lucide="search" class="w-4 h-4"></i>
+                <span>Dimension 1 · Detect</span>
+              </div>
+              <p class="text-xs text-gray-300 leading-relaxed">
+                Uncover the stealth limiting conviction lurking underneath your goals through targeted psychological excavation.
+              </p>
+            </div>
+
+            <div class="zen-card p-4 border-l-4 border-l-[#E5A84B]">
+              <div class="flex items-center gap-2 text-[#E5A84B] font-bold text-xs uppercase tracking-wider mb-1">
+                <i data-lucide="compass" class="w-4 h-4"></i>
+                <span>Dimension 2 · Decode</span>
+              </div>
+              <p class="text-xs text-gray-300 leading-relaxed">
+                Trace its formative childhood origin, identify whose borrowed voice planted it, and map its sensory V.A.K grip in your body.
+              </p>
+            </div>
+
+            <div class="zen-card p-4 border-l-4 border-l-[#9D71E8]">
+              <div class="flex items-center gap-2 text-[#9D71E8] font-bold text-xs uppercase tracking-wider mb-1">
+                <i data-lucide="flame" class="w-4 h-4"></i>
+                <span>Dimension 3 · Dissolve</span>
+              </div>
+              <p class="text-xs text-gray-300 leading-relaxed">
+                Socratically invalidate the mental loop, then execute the somatic Pattern Break & Thumb Technique to collapse its charge.
+              </p>
+            </div>
+
+            <div class="zen-card p-4 border-l-4 border-l-[#36B37E]">
+              <div class="flex items-center gap-2 text-[#36B37E] font-bold text-xs uppercase tracking-wider mb-1">
+                <i data-lucide="sun" class="w-4 h-4"></i>
+                <span>Dimension 4 · Design</span>
+              </div>
+              <p class="text-xs text-gray-300 leading-relaxed">
+                Synthesize a sovereign "I AM" affirmation and integrate with the 21-day neuro-plastic protocol and downloadable report.
+              </p>
+            </div>
+          </div>
+
+          <button 
+            type="button"
+            onclick="goToPhase('goal')"
+            class="btn-primary px-8 py-3.5 text-sm sm:text-base font-bold inline-flex items-center gap-2"
+          >
+            <span>Begin 4D Clearing Protocol</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </button>
+        </div>
+      `;
+    }
+
+    /* ==========================================================================
+       VIEW: GOAL & PRACTITIONER INPUT
+       ========================================================================== */
+    function renderGoal() {
+      const presets = [
+        "Scale business revenue past $50k/month without exhaustion",
+        "Speak in public with magnetic presence and zero stage fear",
+        "Build a deeply fulfilling, conscious romantic partnership",
+        "Permanently dissolve chronic financial imposter syndrome",
+        "Double client rates and charge high-ticket with unapologetic certainty"
+      ];
+
+      return `
+        <div class="py-2">
+          <div class="mb-6">
+            <span class="text-xs font-mono uppercase tracking-wider text-[#E59A46]">Orientation & Anchor</span>
+            <h2 class="font-cinzel text-2xl sm:text-3xl font-bold text-white mt-1">Set Your Target Breakthrough</h2>
+            <p class="text-xs sm:text-sm text-gray-400 mt-1">
+              Subconscious resistance only exposes itself against a concrete, ambitious desired outcome.
+            </p>
+          </div>
+
+          <div class="zen-card p-5 sm:p-6 mb-6 space-y-5">
+            <div>
+              <label class="block text-xs font-bold text-gray-300 uppercase tracking-wider mb-1.5">
+                Your Name <span class="text-gray-500 font-normal lowercase">(optional, for certificate)</span>
+              </label>
+              <input 
+                type="text"
+                id="input-name"
+                value="${escapeHtml(state.name)}"
+                oninput="state.name = this.value"
+                placeholder="e.g. Elena Rostova"
+                class="zen-input w-full px-3.5 py-2.5 text-sm"
+              />
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-gray-300 uppercase tracking-wider mb-1.5">
+                Primary Goal or Outcome <span class="text-[#E59A46]">*</span>
+              </label>
+              <textarea 
+                id="input-goal"
+                rows="3"
+                oninput="state.goal = this.value; validateGoalButton()"
+                placeholder="What is the breakthrough, milestone, or life upgrade you seek?"
+                class="zen-input w-full px-3.5 py-2.5 text-sm"
+              >${escapeHtml(state.goal)}</textarea>
+            </div>
+
+            <!-- Preset Inspiration Chips -->
+            <div>
+              <div class="text-[11px] font-semibold text-gray-400 uppercase tracking-wider mb-2">
+                Quick Select Inspirations:
+              </div>
+              <div class="flex flex-wrap gap-2">
+                ${presets.map(p => `
+                  <button 
+                    type="button"
+                    onclick="selectGoalPreset('${escapeHtml(p)}')"
+                    class="text-xs px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-gray-300 hover:text-white transition-all text-left"
+                  >
+                    + ${p}
+                  </button>
+                `).join('')}
+              </div>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between gap-3">
+            <button type="button" onclick="goToPhase('welcome')" class="btn-ghost px-5 py-2.5 text-xs font-medium">
+              Back
+            </button>
+            <button 
+              type="button"
+              id="btn-goal-next"
+              onclick="submitGoal()"
+              ${!state.goal.trim() ? 'disabled' : ''}
+              class="btn-primary px-6 py-2.5 text-xs font-bold flex items-center gap-2"
+            >
+              <span>Continue to D1: Detect</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+      `;
+    }
+
+    function selectGoalPreset(val) {
+      state.goal = val;
+      const el = document.getElementById('input-goal');
+      if (el) el.value = val;
+      validateGoalButton();
+    }
+
+    function validateGoalButton() {
+      const btn = document.getElementById('btn-goal-next');
+      if (btn) {
+        btn.disabled = !state.goal.trim();
+      }
+    }
+
+    function submitGoal() {
+      if (!state.goal.trim()) return;
+      goToPhase('detect_prompts');
+    }
+
+    /* ==========================================================================
+       VIEW: D1 DETECT PROMPTS
+       ========================================================================== */
+    function renderDetectPrompts() {
+      return `
+        <div class="py-2">
+          <div class="mb-5">
+            <div class="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-[#E26D5C]">
+              <i data-lucide="search" class="w-4 h-4"></i>
+              <span>Dimension 1 · Detect</span>
+            </div>
+            <h2 class="font-cinzel text-2xl sm:text-3xl font-bold text-white mt-1">Excavate the Limiting Belief</h2>
+            <p class="text-xs sm:text-sm text-gray-400 mt-1">
+              Complete any prompts below that trigger immediate somatic truth or internal discomfort.
+            </p>
+          </div>
+
+          <!-- Goal Anchor Badge -->
+          <div class="zen-card p-3 px-4 mb-5 border-l-4 border-l-[#E59A46] bg-amber-500/5">
+            <div class="text-[10.5px] uppercase font-mono tracking-wider text-[#E59A46] font-bold">Target Breakthrough Anchor:</div>
+            <div class="text-sm font-semibold text-white mt-0.5">"${escapeHtml(state.goal)}"</div>
+          </div>
+
+          <div class="space-y-4 mb-6">
+            ${PROMPT_GROUPS.map((group, gi) => `
+              <div class="zen-card p-4 sm:p-5">
+                <div class="text-xs font-bold uppercase tracking-wider ${group.color} mb-3 flex items-center gap-2">
+                  <i data-lucide="key" class="w-3.5 h-3.5"></i>
+                  <span>${group.title}</span>
+                </div>
+                <div class="space-y-3.5">
+                  ${group.prompts.map((p, pi) => {
+                    const key = `${gi}-${pi}`;
+                    const val = state.answers[key] || '';
+                    return `
+                      <div>
+                        <label class="block text-xs font-medium text-gray-300 mb-1 leading-snug">
+                          "${p}"
+                        </label>
+                        <input 
+                          type="text"
+                          value="${escapeHtml(val)}"
+                          oninput="savePromptAnswer('${key}', this.value)"
+                          placeholder="Finish this sentence honestly..."
+                          class="zen-input w-full px-3 py-2 text-xs sm:text-sm"
+                        />
+                      </div>
+                    `;
+                  }).join('')}
+                </div>
+              </div>
+            `).join('')}
+          </div>
+
+          <div class="flex items-center justify-between gap-3">
+            <button type="button" onclick="goToPhase('goal')" class="btn-ghost px-5 py-2.5 text-xs font-medium">
+              Back
+            </button>
+            <button 
+              type="button" 
+              onclick="goToPhase('detect_select')" 
+              class="btn-primary px-6 py-2.5 text-xs font-bold flex items-center gap-2"
+            >
+              <span>Isolate Core Belief</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+      `;
+    }
+
+    function savePromptAnswer(key, val) {
+      state.answers[key] = val;
+    }
+
+    /* ==========================================================================
+       VIEW: D1 SELECT CORE BELIEF
+       ========================================================================== */
+    function renderDetectSelect() {
+      // Find all filled prompts
+      const userAnswers = [];
+      Object.entries(state.answers).forEach(([key, val]) => {
+        if (typeof val === 'string' && val.trim().length > 0) {
+          userAnswers.push(val.trim());
+        }
+      });
+
+      const current = getActiveBelief();
+
+      return `
+        <div class="py-2">
+          <div class="mb-5">
+            <div class="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-[#E26D5C]">
+              <i data-lucide="crosshair" class="w-4 h-4"></i>
+              <span>Dimension 1 · Target Selection</span>
+            </div>
+            <h2 class="font-cinzel text-2xl sm:text-3xl font-bold text-white mt-1">Select the Core Limiting Belief</h2>
+            <p class="text-xs sm:text-sm text-gray-400 mt-1">
+              Choose the exact sentence that produces the sharpest emotional sting. This will be dissolved.
+            </p>
+          </div>
+
+          ${userAnswers.length > 0 ? `
+            <!-- From Excavation -->
+            <div class="zen-card p-4 sm:p-5 mb-5 border-l-4 border-l-[#E26D5C]">
+              <div class="text-xs font-bold uppercase tracking-wider text-[#E26D5C] mb-3">
+                From Your Excavation Inquiries:
+              </div>
+              <div class="space-y-2">
+                ${userAnswers.map(ans => {
+                  const isSelected = state.selectedBelief === ans && !state.customBelief;
+                  return `
+                    <div 
+                      onclick="selectBelief('${escapeHtml(ans)}')"
+                      class="p-3 rounded-lg border text-xs sm:text-sm transition-all cursor-pointer flex items-center justify-between ${
+                        isSelected 
+                          ? 'bg-amber-500/15 border-[#E59A46] text-white font-semibold' 
+                          : 'bg-white/5 border-white/10 text-gray-300 hover:bg-white/10 hover:border-white/20'
+                      }"
+                    >
+                      <span>"${ans}"</span>
+                      ${isSelected ? '<i data-lucide="check-circle" class="w-4 h-4 text-[#E59A46] flex-shrink-0 ml-2"></i>' : ''}
+                    </div>
+                  `;
+                }).join('')}
+              </div>
+            </div>
+          ` : ''}
+
+          <!-- Archetypes -->
+          <div class="zen-card p-4 sm:p-5 mb-5">
+            <div class="text-xs font-bold uppercase tracking-wider text-[#E5A84B] mb-3">
+              Universal Subconscious Archetypes:
+            </div>
+            <div class="space-y-2">
+              ${COMMON_ARCHETYPES.map(arch => {
+                const isSelected = state.selectedBelief === arch && !state.customBelief;
+                return `
+                  <div 
+                    onclick="selectBelief('${escapeHtml(arch)}')"
+                    class="p-3 rounded-lg border text-xs sm:text-sm transition-all cursor-pointer flex items-center justify-between ${
+                      isSelected 
+                        ? 'bg-amber-500/15 border-[#E59A46] text-white font-semibold' 
+                        : 'bg-white/5 border-white/10 text-gray-300 hover:bg-white/10 hover:border-white/20'
+                    }"
+                  >
+                    <span>"${arch}"</span>
+                    ${isSelected ? '<i data-lucide="check-circle" class="w-4 h-4 text-[#E59A46] flex-shrink-0 ml-2"></i>' : ''}
+                  </div>
+                `;
+              }).join('')}
+            </div>
+          </div>
+
+          <!-- Custom Belief Input -->
+          <div class="zen-card p-4 sm:p-5 mb-6">
+            <label class="block text-xs font-bold text-gray-300 uppercase tracking-wider mb-2">
+              Or Craft Your Own Specific Statement:
+            </label>
+            <input 
+              type="text"
+              id="input-custom-belief"
+              value="${escapeHtml(state.customBelief)}"
+              oninput="handleCustomBelief(this.value)"
+              placeholder="e.g. If I charge what I am worth, everyone will abandon me..."
+              class="zen-input w-full px-3.5 py-2.5 text-xs sm:text-sm"
+            />
+          </div>
+
+          <!-- Active Target Banner -->
+          <div class="p-3.5 rounded-xl bg-[#E26D5C]/10 border border-[#E26D5C]/30 mb-6 flex items-start gap-3">
+            <i data-lucide="alert-triangle" class="w-4 h-4 text-[#E26D5C] flex-shrink-0 mt-0.5"></i>
+            <div>
+              <div class="text-[11px] font-bold text-[#E26D5C] uppercase tracking-wider font-mono">Belief Locked for Neutralization:</div>
+              <div class="text-sm font-bold text-white italic mt-0.5">"${escapeHtml(current)}"</div>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between gap-3">
+            <button type="button" onclick="goToPhase('detect_prompts')" class="btn-ghost px-5 py-2.5 text-xs font-medium">
+              Back
+            </button>
+            <button 
+              type="button" 
+              onclick="goToPhase('decode')" 
+              class="btn-primary px-6 py-2.5 text-xs font-bold flex items-center gap-2"
+            >
+              <span>Proceed to D2: Decode</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+      `;
+    }
+
+    function selectBelief(text) {
+      state.selectedBelief = text;
+      state.customBelief = '';
+      render();
+    }
+
+    function handleCustomBelief(text) {
+      state.customBelief = text;
+      if (text.trim()) {
+        state.selectedBelief = '';
+      }
+      // Re-render only target banner or state update
+      const bannerText = document.querySelector('#main-view .italic');
+      if (bannerText) {
+        bannerText.textContent = `"${text || '...'}"`;
+      }
+    }
+
+    /* ==========================================================================
+       VIEW: D2 DECODE
+       ========================================================================== */
+    function renderDecode() {
+      const belief = getActiveBelief();
+      const locations = [
+        "Throat (Choking / Silent voice)",
+        "Solar Plexus (Stomach knot / Anxiety)",
+        "Center Chest (Heavy compression)",
+        "Shoulders & Neck (Crushing burden)",
+        "Head / Temple (Overthinking pressure)"
+      ];
+
+      return `
+        <div class="py-2">
+          <div class="mb-5">
+            <div class="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-[#E5A84B]">
+              <i data-lucide="compass" class="w-4 h-4"></i>
+              <span>Dimension 2 · Decode</span>
+            </div>
+            <h2 class="font-cinzel text-2xl sm:text-3xl font-bold text-white mt-1">Neurological Origin & V.A.K Grip</h2>
+            <p class="text-xs sm:text-sm text-gray-400 mt-1">
+              A belief is not truth; it is merely an uninspected neurological movie anchored in your sensory nervous system.
+            </p>
+          </div>
+
+          <!-- Active Belief Reminder -->
+          <div class="zen-card p-3 px-4 mb-5 border-l-4 border-l-[#E26D5C] bg-[#E26D5C]/5">
+            <div class="text-[10px] uppercase font-mono tracking-wider text-[#E26D5C] font-bold">Investigating Belief:</div>
+            <div class="text-sm font-semibold text-white mt-0.5 italic">"${escapeHtml(belief)}"</div>
+          </div>
+
+          <div class="zen-card p-5 mb-5 space-y-5">
+            <!-- Timeline Origin -->
+            <div>
+              <label class="block text-xs font-bold text-gray-300 uppercase tracking-wider mb-1.5">
+                1. Subconscious Archeology (First Imprint Memory)
+              </label>
+              <input 
+                type="text"
+                value="${escapeHtml(state.decode.when)}"
+                oninput="state.decode.when = this.value"
+                placeholder="Around what age did you first feel or hear this? (e.g. Age 7 in elementary school...)"
+                class="zen-input w-full px-3.5 py-2.5 text-xs sm:text-sm"
+              />
+            </div>
+
+            <!-- Voice Authority -->
+            <div>
+              <label class="block text-xs font-bold text-gray-300 uppercase tracking-wider mb-1.5">
+                2. Source Authority Voice (Whose Echo Is It?)
+              </label>
+              <input 
+                type="text"
+                value="${escapeHtml(state.decode.whose)}"
+                oninput="state.decode.whose = this.value"
+                placeholder="Whose tone or words did you internalize? (e.g. Critical parent, angry teacher, society?)"
+                class="zen-input w-full px-3.5 py-2.5 text-xs sm:text-sm"
+              />
+            </div>
+
+            <!-- Somatic Location -->
+            <div>
+              <label class="block text-xs font-bold text-gray-300 uppercase tracking-wider mb-1.5">
+                3. Somatic Anchor Location (Where is the tension?)
+              </label>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-1">
+                ${locations.map(loc => {
+                  const isSel = state.decode.kLocation === loc;
+                  return `
+                    <div 
+                      onclick="setSomaticLocation('${escapeHtml(loc)}')"
+                      class="p-2.5 rounded-lg border text-xs cursor-pointer transition-all ${
+                        isSel 
+                          ? 'bg-amber-500/15 border-[#E59A46] text-white font-semibold' 
+                          : 'bg-white/5 border-white/10 text-gray-300 hover:bg-white/10'
+                      }"
+                    >
+                      ${loc}
+                    </div>
+                  `;
+                }).join('')}
+              </div>
+            </div>
+
+            <!-- Baseline Intensity Scale -->
+            <div class="pt-3 border-t border-white/5">
+              <div class="flex items-center justify-between mb-2">
+                <label class="text-xs font-bold text-gray-300 uppercase tracking-wider">
+                  4. Current Emotional Grip (1 to 10)
+                </label>
+                <span class="text-sm font-mono font-bold text-[#E26D5C]">
+                  ${state.intensityBefore} / 10
+                </span>
+              </div>
+              <input 
+                type="range"
+                min="1"
+                max="10"
+                value="${state.intensityBefore}"
+                oninput="state.intensityBefore = Number(this.value); render();"
+                class="w-full accent-[#E26D5C] cursor-pointer"
+              />
+              <div class="flex justify-between text-[10px] text-gray-500 font-mono mt-1">
+                <span>1 (Faint Whisper)</span>
+                <span>5 (Noticeable Hesitation)</span>
+                <span>10 (Paralyzing Grip)</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between gap-3">
+            <button type="button" onclick="goToPhase('detect_select')" class="btn-ghost px-5 py-2.5 text-xs font-medium">
+              Back
+            </button>
+            <button 
+              type="button" 
+              onclick="goToPhase('dissolve_logic')" 
+              class="btn-primary px-6 py-2.5 text-xs font-bold flex items-center gap-2"
+            >
+              <span>Proceed to D3: Dissolve</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+      `;
+    }
+
+    function setSomaticLocation(loc) {
+      state.decode.kLocation = loc;
+      render();
+    }
+
+    /* ==========================================================================
+       VIEW: D3 DISSOLVE (LOGIC SOCRATIC COLLAPSE)
+       ========================================================================== */
+    function renderDissolveLogic() {
+      const belief = getActiveBelief();
+
+      return `
+        <div class="py-2">
+          <div class="mb-5">
+            <div class="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-[#9D71E8]">
+              <i data-lucide="flame" class="w-4 h-4"></i>
+              <span>Dimension 3 · Cognitive Dissolution</span>
+            </div>
+            <h2 class="font-cinzel text-2xl sm:text-3xl font-bold text-white mt-1">Socratic Cognitive Invalidation</h2>
+            <p class="text-xs sm:text-sm text-gray-400 mt-1">
+              Before we release the physical knot, your conscious intellect must see that this rule is completely hollow.
+            </p>
+          </div>
+
+          <!-- Active Belief -->
+          <div class="zen-card p-3 px-4 mb-5 border-l-4 border-l-[#E26D5C] bg-[#E26D5C]/5">
+            <div class="text-[10px] uppercase font-mono tracking-wider text-[#E26D5C] font-bold">Dismantling:</div>
+            <div class="text-sm font-semibold text-white mt-0.5 italic">"${escapeHtml(belief)}"</div>
+          </div>
+
+          <div class="space-y-4 mb-6">
+            ${LOGIC_QUESTIONS.map((q, idx) => {
+              const ans = state.logicAnswers[idx] || '';
+              return `
+                <div class="zen-card p-4 sm:p-5">
+                  <div class="text-xs font-bold text-[#E5A84B] uppercase tracking-wider mb-1.5">
+                    Question ${idx + 1}
+                  </div>
+                  <div class="text-xs sm:text-sm font-semibold text-white mb-2.5">
+                    ${q}
+                  </div>
+                  <textarea 
+                    rows="2"
+                    oninput="state.logicAnswers[${idx}] = this.value"
+                    placeholder="Reflect and write your breakthrough answer..."
+                    class="zen-input w-full px-3 py-2 text-xs sm:text-sm"
+                  >${escapeHtml(ans)}</textarea>
+                </div>
+              `;
+            }).join('')}
+          </div>
+
+          <div class="flex items-center justify-between gap-3">
+            <button type="button" onclick="goToPhase('decode')" class="btn-ghost px-5 py-2.5 text-xs font-medium">
+              Back
+            </button>
+            <button 
+              type="button" 
+              onclick="goToPhase('dissolve_release')" 
+              class="btn-primary px-6 py-2.5 text-xs font-bold flex items-center gap-2"
+            >
+              <span>Execute Somatic Release</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+      `;
+    }
+
+    /* ==========================================================================
+       VIEW: D3 SOMATIC TECHNIQUES & TIMER
+       ========================================================================== */
+    function renderDissolveRelease() {
+      const shift = Math.max(0, state.intensityBefore - state.intensityAfter);
+      const minutes = Math.floor(state.timerRemaining / 60);
+      const seconds = state.timerRemaining % 60;
+      const formattedTime = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+
+      return `
+        <div class="py-2">
+          <div class="mb-5">
+            <div class="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-[#9D71E8]">
+              <i data-lucide="zap" class="w-4 h-4"></i>
+              <span>Dimension 3 · Somatic Release</span>
+            </div>
+            <h2 class="font-cinzel text-2xl sm:text-3xl font-bold text-white mt-1">The Physical Release Protocol</h2>
+            <p class="text-xs sm:text-sm text-gray-400 mt-1">
+              Apply these two proven monkhood techniques to dislodge the physiological pattern from your cells.
+            </p>
+          </div>
+
+          <!-- Technique 1: Somatic Extraction -->
+          <div class="zen-card p-5 mb-5 border-l-4 border-l-[#E26D5C]">
+            <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#E26D5C] mb-2">
+              <i data-lucide="hand" class="w-4 h-4"></i>
+              <span>Technique 1 · Somatic Extraction (Pattern Break - K)</span>
+            </div>
+            <div class="text-xs sm:text-sm text-gray-300 space-y-2 leading-relaxed">
+              <p>1. Close your eyes. Place both hands directly over your <strong>${escapeHtml(state.decode.kLocation)}</strong>.</p>
+              <p>2. Give this knot a solid physical density (e.g. Black tar ball, jagged grey rock, iron chain).</p>
+              <p>3. With your physical hands, firmly grasp the sensation, forcefully pull it 12 inches out of your torso, and cast it skyward into white heat while performing a sharp, audible exhalation: <em>"HA!"</em></p>
+              <p>4. Repeat 3 consecutive times until the area feels hollow and spacious.</p>
+            </div>
+          </div>
+
+          <!-- Technique 2: The Thumb Technique -->
+          <div class="zen-card p-5 mb-5 border-l-4 border-l-[#9D71E8]">
+            <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#9D71E8] mb-2">
+              <i data-lucide="volume-x" class="w-4 h-4"></i>
+              <span>Technique 2 · The Thumb Technique (Voice Deflation - A)</span>
+            </div>
+            <div class="text-xs sm:text-sm text-gray-300 space-y-2 leading-relaxed">
+              <p>1. Hear the voice of <strong>${escapeHtml(state.decode.whose || 'the critic')}</strong> that whispers: <em>"${escapeHtml(getActiveBelief())}"</em>.</p>
+              <p>2. Mentally grab the audio track from your head. Route it down your left shoulder, down your forearm, and trap it in the tip of your <strong>left thumb</strong>.</p>
+              <p>3. Shrink the voice into a tiny helium chipmunk squeak. Laugh out loud at how comical and powerless it sounds.</p>
+              <p>4. Once you laugh, its subconscious authority collapses permanently.</p>
+            </div>
+          </div>
+
+          <!-- Mindfulness Practice Timer -->
+          <div class="zen-card p-5 mb-5 text-center bg-black/40">
+            <div class="text-xs font-mono uppercase tracking-wider text-gray-400 mb-1">
+              Mindfulness Breath & Release Timer
+            </div>
+            <div class="text-4xl sm:text-5xl font-mono font-bold text-[#E59A46] my-2 tracking-wider">
+              ${formattedTime}
+            </div>
+            <div class="flex items-center justify-center gap-3 mt-3">
+              <button 
+                type="button" 
+                onclick="toggleTimer()" 
+                class="btn-ghost px-4 py-1.5 text-xs font-bold flex items-center gap-1.5"
+              >
+                <i data-lucide="${state.timerRunning ? 'pause' : 'play'}" class="w-3.5 h-3.5"></i>
+                <span>${state.timerRunning ? 'Pause' : 'Start 2-Min Practice'}</span>
+              </button>
+              <button 
+                type="button" 
+                onclick="resetTimer()" 
+                class="btn-ghost px-3 py-1.5 text-xs text-gray-400"
+              >
+                Reset
+              </button>
+            </div>
+          </div>
+
+          <!-- Post-Release Intensity Rating -->
+          <div class="zen-card p-5 mb-6">
+            <div class="flex items-center justify-between mb-2">
+              <label class="text-xs font-bold text-gray-300 uppercase tracking-wider">
+                Post-Release Emotional Charge (1 to 10)
+              </label>
+              <div class="flex items-center gap-2 font-mono text-sm">
+                <span class="text-gray-400 line-through">${state.intensityBefore}</span>
+                <span>➔</span>
+                <span class="text-[#36B37E] font-bold text-base">${state.intensityAfter} / 10</span>
+              </div>
+            </div>
+
+            <input 
+              type="range"
+              min="1"
+              max="10"
+              value="${state.intensityAfter}"
+              oninput="state.intensityAfter = Number(this.value); render();"
+              class="w-full accent-[#36B37E] cursor-pointer"
+            />
+
+            ${shift > 0 ? `
+              <div class="mt-3 p-2.5 rounded-lg bg-[#36B37E]/15 border border-[#36B37E]/30 text-[#36B37E] text-xs font-bold text-center font-mono">
+                🎉 Emotional charge reduced by ${shift} points (${Math.round((shift / Math.max(1, state.intensityBefore)) * 100)}% shift)
+              </div>
+            ` : ''}
+          </div>
+
+          <div class="flex items-center justify-between gap-3">
+            <button type="button" onclick="goToPhase('dissolve_logic')" class="btn-ghost px-5 py-2.5 text-xs font-medium">
+              Back
+            </button>
+            <button 
+              type="button" 
+              onclick="goToPhase('design')" 
+              class="btn-primary px-6 py-2.5 text-xs font-bold flex items-center gap-2"
+            >
+              <span>Install D4: Design</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+      `;
+    }
+
+    function toggleTimer() {
+      if (state.timerRunning) {
+        clearInterval(state.timerInterval);
+        state.timerRunning = false;
+      } else {
+        state.timerRunning = true;
+        state.timerInterval = setInterval(() => {
+          if (state.timerRemaining > 0) {
+            state.timerRemaining--;
+            const timerEl = document.querySelector('#main-view .font-mono.text-4xl, #main-view .font-mono.text-5xl');
+            if (timerEl) {
+              const min = Math.floor(state.timerRemaining / 60);
+              const sec = state.timerRemaining % 60;
+              timerEl.textContent = `${String(min).padStart(2, '0')}:${String(sec).padStart(2, '0')}`;
+            }
+          } else {
+            clearInterval(state.timerInterval);
+            state.timerRunning = false;
+            render();
+          }
+        }, 1000);
+      }
+      render();
+    }
+
+    function resetTimer() {
+      if (state.timerInterval) clearInterval(state.timerInterval);
+      state.timerRunning = false;
+      state.timerRemaining = 120;
+      render();
+    }
+
+    /* ==========================================================================
+       VIEW: D4 DESIGN (SOVEREIGN IDENTITY & AFFIRMATION GENERATOR)
+       ========================================================================== */
+    function renderDesign() {
+      const templates = generateAffirmationTemplates();
+
+      return `
+        <div class="py-2">
+          <div class="mb-5">
+            <div class="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-[#36B37E]">
+              <i data-lucide="sun" class="w-4 h-4"></i>
+              <span>Dimension 4 · Design</span>
+            </div>
+            <h2 class="font-cinzel text-2xl sm:text-3xl font-bold text-white mt-1">Anchor Your Sovereign Identity</h2>
+            <p class="text-xs sm:text-sm text-gray-400 mt-1">
+              The vacuum created by dissolving the old belief must now be occupied by a high-voltage truth.
+            </p>
+          </div>
+
+          <!-- Dynamic Affirmation Generator Hub -->
+          <div class="zen-card p-5 mb-5 border-l-4 border-l-[#36B37E]">
+            <div class="text-xs font-bold uppercase tracking-wider text-[#36B37E] mb-2 flex items-center gap-2">
+              <i data-lucide="sparkles" class="w-4 h-4"></i>
+              <span>Dynamic Sovereign Affirmation Presets</span>
+            </div>
+            <p class="text-xs text-gray-400 mb-3">
+              Generated in real-time based on your goal and inverted limiting belief. Click to install:
+            </p>
+            <div class="space-y-2">
+              ${templates.map(t => `
+                <div 
+                  onclick="setNewBelief('${escapeHtml(t)}')"
+                  class="p-3 rounded-lg border text-xs sm:text-sm cursor-pointer transition-all ${
+                    state.newBelief === t 
+                      ? 'bg-[#36B37E]/20 border-[#36B37E] text-white font-bold' 
+                      : 'bg-white/5 border-white/10 text-gray-300 hover:bg-white/10'
+                  }"
+                >
+                  "${t}"
+                </div>
+              `).join('')}
+            </div>
+          </div>
+
+          <!-- Custom Statement Input -->
+          <div class="zen-card p-5 mb-5">
+            <label class="block text-xs font-bold text-gray-300 uppercase tracking-wider mb-2">
+              Your Master Sovereign Affirmation ("I AM...")
+            </label>
+            <textarea 
+              rows="3"
+              id="input-new-belief"
+              oninput="state.newBelief = this.value; validateDesignButton();"
+              placeholder="e.g. I am completely sovereign, grounded, and worthy as I scale my mission..."
+              class="zen-input w-full px-3.5 py-2.5 text-sm sm:text-base font-semibold text-[#36B37E]"
+            >${escapeHtml(state.newBelief)}</textarea>
+          </div>
+
+          <!-- Neurological V.A.K Installation Fields -->
+          <div class="zen-card p-5 mb-5 space-y-4">
+            <div class="text-xs font-bold uppercase tracking-wider text-[#E5A84B] mb-1">
+              Sensory V.A.K Installation Anchors
+            </div>
+
+            <div>
+              <label class="block text-xs font-medium text-gray-300 mb-1">
+                Visual Movie (V): What do you see in your mind when living this truth?
+              </label>
+              <input 
+                type="text"
+                value="${escapeHtml(state.designVAK.v)}"
+                oninput="state.designVAK.v = this.value"
+                placeholder="e.g. Clear, brightly lit cinema of me speaking confidently with open posture..."
+                class="zen-input w-full px-3 py-2 text-xs sm:text-sm"
+              />
+            </div>
+
+            <div>
+              <label class="block text-xs font-medium text-gray-300 mb-1">
+                Auditory Timbre (A): What tone does your inner sovereign voice speak with?
+              </label>
+              <input 
+                type="text"
+                value="${escapeHtml(state.designVAK.a)}"
+                oninput="state.designVAK.a = this.value"
+                placeholder="e.g. Deep, calm, unwavering certainty from the center of my throat..."
+                class="zen-input w-full px-3 py-2 text-xs sm:text-sm"
+              />
+            </div>
+
+            <div>
+              <label class="block text-xs font-medium text-gray-300 mb-1">
+                Kinaesthetic Somatic Anchor (K): How does your chest and spine feel right now?
+              </label>
+              <input 
+                type="text"
+                value="${escapeHtml(state.designVAK.k)}"
+                oninput="state.designVAK.k = this.value"
+                placeholder="e.g. Solar plexus warmly radiating, open heart, grounded feet..."
+                class="zen-input w-full px-3 py-2 text-xs sm:text-sm"
+              />
+            </div>
+          </div>
+
+          <!-- The 5 Monkhood Laws -->
+          <div class="zen-card p-4 sm:p-5 mb-6 text-xs text-gray-300">
+            <div class="text-[11px] font-bold text-[#E59A46] uppercase tracking-wider mb-2 font-mono">
+              The 5 Subconscious Installation Laws:
+            </div>
+            <ul class="space-y-1.5 list-disc list-inside text-gray-400">
+              <li>Must be declared in immediate present tense ("I AM", not "I will").</li>
+              <li>Contains zero negative word triggers.</li>
+              <li>Fueled by physical physiological emotion, not dull repetition.</li>
+            </ul>
+          </div>
+
+          <div class="flex items-center justify-between gap-3">
+            <button type="button" onclick="goToPhase('dissolve_release')" class="btn-ghost px-5 py-2.5 text-xs font-medium">
+              Back
+            </button>
+            <button 
+              type="button" 
+              id="btn-design-next"
+              onclick="submitDesign()" 
+              ${!state.newBelief.trim() ? 'disabled' : ''}
+              class="btn-primary px-6 py-2.5 text-xs font-bold flex items-center gap-2"
+            >
+              <span>Seal Record & Get Certificate</span>
+              <i data-lucide="shield-check" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+      `;
+    }
+
+    function setNewBelief(text) {
+      state.newBelief = text;
+      const el = document.getElementById('input-new-belief');
+      if (el) el.value = text;
+      validateDesignButton();
+      render();
+    }
+
+    function validateDesignButton() {
+      const btn = document.getElementById('btn-design-next');
+      if (btn) btn.disabled = !state.newBelief.trim();
+    }
+
+    function submitDesign() {
+      if (!state.newBelief.trim()) return;
+      goToPhase('complete');
+    }
+
+    /* ==========================================================================
+       VIEW: COMPLETE CERTIFICATE & DOWNLOAD HUB
+       ========================================================================== */
+    function renderComplete() {
+      const shift = Math.max(0, state.intensityBefore - state.intensityAfter);
+
+      return `
+        <div class="text-center py-2" id="certificate-print-zone">
+          <div class="w-14 h-14 mx-auto mb-3 rounded-2xl flex items-center justify-center bg-[#36B37E]/20 border border-[#36B37E]/40 text-[#36B37E] shadow-[0_0_25px_rgba(54,179,126,0.25)]">
+            <i data-lucide="sparkles" class="w-7 h-7"></i>
+          </div>
+
+          <h2 class="font-cinzel text-2xl sm:text-4xl font-bold text-white mb-1">
+            Subconscious Code Rewritten
+          </h2>
+          <p class="text-xs sm:text-sm text-gray-400 max-w-md mx-auto mb-6">
+            You have walked through all 4 dimensions. Here is your official Monkhood clearing record and integration guide.
+          </p>
+
+          <!-- The Sacred Transformation Scroll Card -->
+          <div class="transformation-scroll mb-6">
+            <!-- Header Ribbon -->
+            <div class="flex items-center justify-between p-4 border-b border-white/10">
+              <div class="text-left">
+                <div class="text-[10px] font-bold tracking-[2px] text-[#E59A46] uppercase font-mono">
+                  ${BRAND.name} · Official Record
+                </div>
+                <div class="text-sm sm:text-base font-semibold text-white">
+                  Subconscious Reprogramming Transcript
+                </div>
+              </div>
+              <div class="px-2.5 py-1 rounded-full bg-[#36B37E]/15 border border-[#36B37E]/30 text-[11px] font-bold text-[#36B37E] flex items-center gap-1.5">
+                <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
+                <span>Dissolved & Sealed</span>
+              </div>
+            </div>
+
+            <!-- Practitioner & Goal -->
+            <div class="scroll-section">
+              <div class="scroll-label text-[#E59A46]">Anchor Goal & Practitioner</div>
+              ${state.name ? `<div class="text-xs font-semibold text-[#F5C78E] mb-0.5">Practitioner: ${escapeHtml(state.name)}</div>` : ''}
+              <div class="text-sm sm:text-base text-white font-medium">
+                "${escapeHtml(state.goal)}"
+              </div>
+            </div>
+
+            <!-- D1 Old Belief Dissolved -->
+            <div class="scroll-section">
+              <div class="scroll-label text-[#E26D5C]">D1 · Dissolved Limiting Belief</div>
+              <div class="text-xs sm:text-sm text-gray-400 line-through italic">
+                "${escapeHtml(getActiveBelief())}"
+              </div>
+            </div>
+
+            <!-- D2 Origin -->
+            <div class="scroll-section">
+              <div class="scroll-label text-[#E5A84B]">D2 · Subconscious Imprint Origin</div>
+              <div class="text-xs text-gray-300 space-y-0.5">
+                <div>First Formed: ${escapeHtml(state.decode.when || 'Childhood / Early Development')}</div>
+                <div>Source Voice: ${escapeHtml(state.decode.whose || 'External conditioning')}</div>
+                <div>Somatic Center: ${escapeHtml(state.decode.kLocation)}</div>
+              </div>
+            </div>
+
+            <!-- D3 Intensity Shift -->
+            <div class="scroll-section">
+              <div class="scroll-label text-[#9D71E8]">D3 · Emotional Charge Collapse</div>
+              <div class="flex items-center gap-5 my-2">
+                <div>
+                  <div class="text-xl sm:text-2xl font-mono font-extrabold text-[#E26D5C]">${state.intensityBefore}/10</div>
+                  <div class="text-[9.5px] uppercase font-mono text-gray-500">Prior Grip</div>
+                </div>
+                <div class="text-gray-500">➔</div>
+                <div>
+                  <div class="text-xl sm:text-2xl font-mono font-extrabold text-[#36B37E]">${state.intensityAfter}/10</div>
+                  <div class="text-[9.5px] uppercase font-mono text-gray-500">Current State</div>
+                </div>
+                ${shift > 0 ? `
+                  <div class="ml-auto px-3 py-1 rounded bg-[#36B37E]/15 border border-[#36B37E]/30 text-xs font-bold text-[#36B37E] font-mono">
+                    -${shift} Reduction
+                  </div>
+                ` : ''}
+              </div>
+            </div>
+
+            <!-- D4 Installed Sovereign Affirmation -->
+            <div class="scroll-section bg-[#36B37E]/5">
+              <div class="scroll-label text-[#36B37E]">D4 · Sovereign New Identity (Active)</div>
+              <div class="text-base sm:text-xl font-bold text-[#36B37E] italic py-1 leading-snug">
+                "${escapeHtml(state.newBelief)}"
+              </div>
+
+              ${(state.designVAK.v || state.designVAK.a || state.designVAK.k) ? `
+                <div class="mt-2.5 pt-2.5 border-t border-white/10 text-xs text-gray-300 space-y-1 text-left">
+                  ${state.designVAK.v ? `<div>• <strong>Visual:</strong> ${escapeHtml(state.designVAK.v)}</div>` : ''}
+                  ${state.designVAK.a ? `<div>• <strong>Auditory:</strong> ${escapeHtml(state.designVAK.a)}</div>` : ''}
+                  ${state.designVAK.k ? `<div>• <strong>Somatic:</strong> ${escapeHtml(state.designVAK.k)}</div>` : ''}
+                </div>
+              ` : ''}
+            </div>
+
+            <!-- Footer Seal -->
+            <div class="p-3 bg-black/30 flex items-center justify-between text-[10px] text-gray-500 font-mono">
+              <span>${BRAND.methodTitle}</span>
+              <span>${BRAND.name.toUpperCase()} · ${BRAND.author.toUpperCase()}</span>
+            </div>
+          </div>
+
+          <!-- The 21-Day Neuro-Plasticity Routine -->
+          <div class="zen-card text-left p-5 mb-6 no-print">
+            <div class="flex items-center gap-2 text-[#E59A46] text-xs font-bold tracking-wider uppercase mb-3">
+              <i data-lucide="calendar" class="w-4 h-4"></i>
+              <span>The 21-Day Neuro-Plasticity Protocol</span>
+            </div>
+            <div class="space-y-2.5 text-xs sm:text-sm text-gray-300 leading-relaxed">
+              <div class="flex items-start gap-2.5">
+                <i data-lucide="sun" class="w-4 h-4 text-[#E59A46] flex-shrink-0 mt-0.5"></i>
+                <div>
+                  <strong class="text-white">Morning Installation:</strong> Stand tall upon waking. Recite your sovereign belief out loud 10 times with open posture and diaphragmatic breath.
+                </div>
+              </div>
+              <div class="flex items-start gap-2.5">
+                <i data-lucide="sparkles" class="w-4 h-4 text-[#E59A46] flex-shrink-0 mt-0.5"></i>
+                <div>
+                  <strong class="text-white">Midday Reset:</strong> Recite internally 5 times. If any shadow whispers, invoke the Thumb Technique to laugh off the doubt.
+                </div>
+              </div>
+              <div class="flex items-start gap-2.5">
+                <i data-lucide="moon" class="w-4 h-4 text-[#E59A46] flex-shrink-0 mt-0.5"></i>
+                <div>
+                  <strong class="text-white">Evening Journaling:</strong> Handwrite the affirmation 5 times before sleep while mentally running your visual movie during theta state.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Complete Download Hub -->
+          <div id="download-hub" class="zen-card text-left p-5 mb-5 border-l-4 border-l-[#E59A46] no-print">
+            <div class="flex items-center justify-between mb-2">
+              <div class="flex items-center gap-2 text-[#E59A46] font-bold text-xs uppercase tracking-wider">
+                <i data-lucide="download" class="w-4 h-4"></i>
+                <span>Download Complete Reprogramming Report</span>
+              </div>
+              <span class="text-[10px] font-mono text-gray-400 uppercase">Includes All Techniques</span>
+            </div>
+            <p class="text-xs text-gray-300 mb-4 leading-relaxed">
+              Save your complete session record including Somatic Extraction steps, Thumb Technique, Socratic answers, and the 21-day neuro-plasticity routine.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3">
+              <button 
+                type="button" 
+                onclick="triggerDownloadHtml()"
+                class="btn-primary py-3 text-xs font-bold flex items-center justify-center gap-2"
+              >
+                <i data-lucide="file-code" class="w-4 h-4"></i>
+                <span>Download Styled Report (.html)</span>
+              </button>
+
+              <button 
+                type="button" 
+                onclick="triggerDownloadTxt()"
+                class="btn-ghost py-3 text-xs font-bold flex items-center justify-center gap-2 border-amber-500/30 text-white"
+              >
+                <i data-lucide="file-text" class="w-4 h-4 text-[#E59A46]"></i>
+                <span>Download Text / Markdown (.txt)</span>
+              </button>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <button 
+                type="button" 
+                onclick="copyReportToClipboard()" 
+                class="btn-ghost py-2.5 text-xs font-medium flex items-center justify-center gap-2"
+              >
+                <i data-lucide="${state.copiedFeedback ? 'check' : 'copy'}" class="w-4 h-4 ${state.copiedFeedback ? 'text-[#36B37E]' : 'text-[#E59A46]'}"></i>
+                <span>${state.copiedFeedback ? 'Copied to Clipboard!' : 'Copy Transcript Text'}</span>
+              </button>
+
+              <button 
+                type="button" 
+                onclick="window.print()" 
+                class="btn-ghost py-2.5 text-xs font-medium flex items-center justify-center gap-2"
+              >
+                <i data-lucide="printer" class="w-4 h-4 text-gray-300"></i>
+                <span>Print or Save to PDF</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Reset Button -->
+          <div class="no-print">
+            <button 
+              type="button" 
+              onclick="resetApp()" 
+              class="btn-ghost w-full py-3 text-xs font-medium flex items-center justify-center gap-2"
+            >
+              <i data-lucide="rotate-ccw" class="w-4 h-4"></i>
+              <span>Clear Another Limiting Belief</span>
+            </button>
+          </div>
+        </div>
+      `;
+    }
+
+    /* ==========================================================================
+       INITIAL BOOTSTRAP
+       ========================================================================== */
+    window.addEventListener('DOMContentLoaded', () => {
+      render();
+    });
+
+    // In case script executes after DOM is already ready
+    if (document.readyState === 'interactive' || document.readyState === 'complete') {
+      render();
+    }
+  </script>
+</body>
+</html>
