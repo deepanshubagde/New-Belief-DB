@@ -12,6 +12,39 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet" />
+
+    <!-- Netlify Badge & Drawer Blocker -->
+    <script>
+      (function() {
+        function removeNetlifyElements() {
+          const targets = document.querySelectorAll(
+            '#netlify-drawer-root, #netlify-badge, .netlify-badge, .netlify-drawer, [data-netlify-deploy-id], [data-testid="netlify-drawer"], [aria-label*="Netlify" i], iframe[src*="netlify" i], a[href*="netlify.com" i]'
+          );
+          targets.forEach(function(el) {
+            try { el.remove(); } catch (_) { el.style.display = 'none'; }
+          });
+          // Also check direct children of body with "netlify" in inner text
+          document.querySelectorAll('body > *').forEach(function(node) {
+            if (node.id === 'root') return;
+            var text = (node.innerText || node.textContent || '').toLowerCase();
+            if (text.includes('powered by netlify') || text.includes('deploys by netlify')) {
+              try { node.remove(); } catch (_) { node.style.display = 'none'; }
+            }
+          });
+        }
+        if (typeof document !== 'undefined') {
+          if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', removeNetlifyElements);
+          } else {
+            removeNetlifyElements();
+          }
+          if (typeof MutationObserver !== 'undefined') {
+            var observer = new MutationObserver(removeNetlifyElements);
+            observer.observe(document.documentElement, { childList: true, subtree: true });
+          }
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

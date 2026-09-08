@@ -614,3 +614,36 @@ body {
   }
   .scroll-label, .scroll-section { color: #111111 !important; border-color: #e5e7eb !important; }
 }
+
+/* ==========================================================================
+   NETLIFY BADGE & DRAWER ERADICATION
+   Permanently suppresses any Netlify injected badges, feedback drawers,
+   and bottom-right overlay widgets.
+   ========================================================================== */
+#netlify-drawer-root,
+#netlify-badge,
+.netlify-badge,
+.netlify-drawer,
+[data-netlify-deploy-id],
+[data-testid="netlify-drawer"],
+[aria-label*="Netlify" i],
+[title*="Netlify" i],
+iframe[src*="netlify" i],
+a[href*="netlify.com" i],
+div[class*="netlify" i],
+div[id*="netlify" i],
+div[class*="feedback-drawer" i],
+div[id*="feedback-drawer" i] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  position: absolute !important;
+  z-index: -99999 !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  clip-path: inset(50%) !important;
+}
+
