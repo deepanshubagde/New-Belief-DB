@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <!-- Background Radial Gradient -->
+    <radialGradient id="bgGradient" cx="50%" cy="50%" r="55%" fx="50%" fy="50%">
+      <stop offset="0%" stop-color="#241B12" />
+      <stop offset="70%" stop-color="#120F0C" />
+      <stop offset="100%" stop-color="#080706" />
+    </radialGradient>
+
+    <!-- Monk Amber Gold Gradient -->
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDE68A" />
+      <stop offset="45%" stop-color="#E59A46" />
+      <stop offset="100%" stop-color="#B45309" />
+    </linearGradient>
+
+    <!-- Inner Core Radiant Light -->
+    <linearGradient id="coreLight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="60%" stop-color="#FEF3C7" />
+      <stop offset="100%" stop-color="#F59E0B" />
+    </linearGradient>
+
+    <!-- Subtle Glow Filter -->
+    <filter id="amberGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="1.5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Container Squircle with Amber Border -->
+  <rect x="2" y="2" width="60" height="60" rx="15" fill="url(#bgGradient)" stroke="#E59A46" stroke-width="1.8" stroke-opacity="0.45" />
+
+  <!-- Subtle 4D Sacred Orbit Circle -->
+  <circle cx="32" cy="32" r="22" fill="none" stroke="#E59A46" stroke-width="1" stroke-opacity="0.25" stroke-dasharray="2 3" />
+
+  <!-- 4-Dimensional Subtle Ray Axes -->
+  <line x1="32" y1="7" x2="32" y2="57" stroke="#E59A46" stroke-width="0.8" stroke-opacity="0.3" />
+  <line x1="7" y1="32" x2="57" y2="32" stroke="#E59A46" stroke-width="0.8" stroke-opacity="0.3" />
+
+  <!-- 4 Dimensional Nodes: D1 Detect (Coral Red), D2 Decode (Amber), D3 Dissolve (Violet), D4 Design (Emerald) -->
+  <circle cx="32" cy="10" r="2.2" fill="#E26D5C" />
+  <circle cx="54" cy="32" r="2.2" fill="#E5A84B" />
+  <circle cx="32" cy="54" r="2.2" fill="#9D71E8" />
+  <circle cx="10" cy="32" r="2.2" fill="#36B37E" />
+
+  <!-- Diagonal Awakening Spark Rays -->
+  <line x1="22" y1="22" x2="42" y2="42" stroke="#FDE68A" stroke-width="1" stroke-opacity="0.4" stroke-linecap="round" />
+  <line x1="42" y1="22" x2="22" y2="42" stroke="#FDE68A" stroke-width="1" stroke-opacity="0.4" stroke-linecap="round" />
+
+  <!-- The 4D Belief Clearing Star (Astroid Curve) -->
+  <path d="M 32 11 Q 32 32 53 32 Q 32 32 32 53 Q 32 32 11 32 Q 32 32 32 11 Z"
+        fill="url(#goldGradient)"
+        filter="url(#amberGlow)" />
+
+  <!-- Inner Mind Diamond (Sovereign Clarity) -->
+  <path d="M 32 20 L 44 32 L 32 44 L 20 32 Z" fill="url(#coreLight)" fill-opacity="0.9" />
+
+  <!-- Central Awakening Bindu Point -->
+  <circle cx="32" cy="32" r="3.2" fill="#FFFFFF" />
+  <circle cx="32" cy="32" r="1.5" fill="#B45309" />
+</svg>
